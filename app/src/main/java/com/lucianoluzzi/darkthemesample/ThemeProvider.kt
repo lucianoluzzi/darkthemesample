@@ -31,6 +31,6 @@ class ThemeProvider(private val context: Context) {
         context.getString(R.string.dark_theme_preference_value) -> UiModeManager.MODE_NIGHT_YES
         context.getString(R.string.light_theme_preference_value) -> UiModeManager.MODE_NIGHT_NO
         context.getString(R.string.system_theme_preference_value) -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-        else -> throw InvalidParameterException("")
+        else -> throw InvalidParameterException("Theme not defined for $selectedTheme")
     }
 }
