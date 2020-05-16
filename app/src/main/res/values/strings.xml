@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DarkThemeSample</string>
+
+    <string name="theme_preferences_key">theme_preferences_key</string>
+    <string name="dark_theme_preference_value">0</string>
+    <string name="light_theme_preference_value">1</string>
+    <string name="system_theme_preference_value">2</string>
+
+    <string name="dark_theme_description">Dark mode</string>
+    <string name="light_theme_description">Light mode</string>
+    <string name="system_theme_description">System default</string>
+</resources>
