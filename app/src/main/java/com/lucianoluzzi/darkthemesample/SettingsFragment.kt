@@ -7,6 +7,8 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 
 class SettingsFragment : PreferenceFragmentCompat() {
+
+    private val themeProvider by lazy { ThemeProvider(requireContext()) }
     private val themePreference by lazy {
         findPreference<ListPreference>(getString(R.string.theme_preferences_key))
     }
@@ -19,8 +21,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
     private fun setThemePreference() {
         themePreference?.onPreferenceChangeListener =
             Preference.OnPreferenceChangeListener { _, newValue ->
-                if (newValue is String)
-                    AppCompatDelegate.setDefaultNightMode(newValue.getTheme(requireContext()))
+                if (newValue is String) {
+                    val theme = themeProvider.getTheme(newValue)
+                    AppCompatDelegate.setDefaultNightMode(theme)
+                }
                 true
             }
         themePreference?.summaryProvider = getThemeSummaryProvider()
@@ -28,6 +32,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     private fun getThemeSummaryProvider() =
         Preference.SummaryProvider<ListPreference> { preference ->
-            ThemeProvider(requireContext()).getThemeDescriptionForPreference(preference.value)
+            themeProvider.getThemeDescriptionForPreference(preference.value)
         }
 }
