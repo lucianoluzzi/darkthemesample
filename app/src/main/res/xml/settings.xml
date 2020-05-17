@@ -1,5 +1,9 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <SwitchPreferenceCompat
+        app:key="@string/notification_preferences_key"
+        app:title="Enable message notifications"/>
+
     <ListPreference
         app:entries="@array/themes_entries"
         app:entryValues="@array/themes_values"

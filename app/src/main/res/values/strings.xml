@@ -2,6 +2,8 @@
     <string name="app_name">DarkThemeSample</string>
 
     <string name="theme_preferences_key">theme_preferences_key</string>
+    <string name="notification_preferences_key"></string>
+
     <string name="dark_theme_preference_value">0</string>
     <string name="light_theme_preference_value">1</string>
     <string name="system_theme_preference_value">2</string>
